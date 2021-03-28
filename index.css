@@ -1,0 +1,59 @@
+body {
+	margin: 0;
+	font-family: "Open-Sans", sans-serif;
+}
+
+.main-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.img-container {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dog-img {
+	width: 50%;
+	height: auto;
+}
+
+.heading-text, .sub-heading-text {
+	margin-top: 0.5rem;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	text-align: center;
+}
+
+.heading-text {
+}
+
+.sub-heading-text {
+}
+
+.content-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.input-box {
+	margin-left: 2%;
+	width: 11%;
+}
+
+.dropdown {
+}
+
+.btn-container {
+	margin-top: 1%;
+}
+
