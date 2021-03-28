@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hot Dogs</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Ever wondered how many hot dogs you should eat each day? Figure that out here.">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="index.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="/imgs/bookbot_icon.ico"/>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<!-- life is a balance between hot dogs and responsibilities, make sure your hot dog consumption is responsible -->
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="img-container">
+				<img class="dog-img" src="hotdog.jpg"/>
+			</div>
+			<h1 class="heading-text">How many hot dogs should you eat each day?</h1>
+			<p class="sub-heading-text">Life is a balance between hot dogs and responsibilities. Take responsibility of your daily hot dog consumption here.</p>
+			<h2 class="heading-text">Enter your information for a dog-reading.</h2>
+			<div class="content-container">
+				<p>Height (ft):</p>
+				<input id="ht-ft" class="input-box" type="text" autocomplete="off"> 
+				<p style="margin-left: 6%;">Height (in):</p>
+				<input id="ht-in" class="input-box" type="text" autocomplete="off"> 
+			</div>
+			<div class="content-container">
+				<p>Age:</p>
+				<input id="age" class="input-box" type="text" autocomplete="off"> 
+			</div>
+			<div class="content-container">
+				<p style="margin-right: 4%">Gender:</p>
+				<select id="gender-dropdown" class="dropdown">
+					<option selected disabled hidden></option>
+					<option>Female</option>
+					<option>Male</option>
+				</select>
+			</div>
+			<div class="content-container">
+				<p style="margin-right: 2%">Activity level:</p>
+				<select id="activity-dropdown">
+					<option selected disabled hidden></option>
+					<option>None</option>
+					<option>Light</option>
+					<option>Moderate</option>
+					<option>Very</option>
+					<option>Olympic Athlete</option>
+				</select>
+			</div>
+			<div class="btn-container">
+				<button class="calc-btn">Dog me</button>
+			</div>
+		</div>
+	</body>
+</html>
