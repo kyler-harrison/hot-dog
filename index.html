@@ -12,7 +12,7 @@
 		<!-- life is a balance between hot dogs and responsibilities, make sure your hot dog consumption is responsible -->
 	</head>
 	<body>
-		<div class="main-container">
+		<div id="main-container" class="main-container">
 			<div class="img-container">
 				<img class="dog-img" src="hotdog.jpg"/>
 			</div>
@@ -24,6 +24,10 @@
 				<input id="ht-ft" class="input-box" type="text" autocomplete="off"> 
 				<p style="margin-left: 1.5rem;">Height (in):</p>
 				<input id="ht-in" class="input-box" type="text" autocomplete="off"> 
+			</div>
+			<div class="content-container">
+				<p>Weight (lbs):</p>
+				<input id="weight" class="input-box" type="text" autocomplete="off"> 
 			</div>
 			<div class="content-container">
 				<p>Age:</p>
@@ -48,7 +52,7 @@
 					<option>Olympic Athlete</option>
 				</select>
 			</div>
-			<div class="btn-container">
+			<div id="btn-container" class="btn-container">
 				<button id="calc-btn" class="calc-btn">Dog me</button>
 			</div>
 		</div>
