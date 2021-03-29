@@ -2,37 +2,84 @@ function inputError() {
 	var btnElem = document.getElementById("btn-container");
 	var errElem = document.createElement("div");
 	errElem.innerHTML = "Ensure that you have entered valid numbers.";
+	errElem.id = "error-msg";
 	errElem.className = "error-msg";
 	btnElem.parentNode.insertBefore(errElem, btnElem.nextSibling);
 }
 
 document.getElementById("calc-btn").addEventListener("click", () => {
+	var formerRes = document.getElementById("results-container");
+	var formerErr = document.getElementById("error-msg");
+	try {
+		formerRes.remove();
+	} catch (err) {
+	}
+
+	try {
+		formerErr.remove();
+	} catch (err) {
+	}
+
 	var inpHtFt = document.getElementById("ht-ft").value;
 	var inpHtIn = document.getElementById("ht-in").value;
+	var inpWt = document.getElementById("weight").value;
 	var inpAge = document.getElementById("age").value;
 	var gen = document.getElementById("gender-dropdown").value;
 	var activ = document.getElementById("activity-dropdown").value;
 
 	var htFt = parseFloat(inpHtFt);
 	var htIn = parseFloat(inpHtIn);
+	var wt = parseFloat(inpWt);
 	var age = parseFloat(inpAge);
 
 	var gens = ["Female", "Male"];
-	var activs = ["None", "Light", "Moderate", "Very", "Olympic Athlete"];
+	var activs = {"None": 1.2, "Light": 1.375, "Moderate": 1.55, "Very": 1.725, "Olympic Athlete": 1.9};
+	var dogs = {"Ball Park Beef Dogs": 180, "Ball Park Franks": 130, "Nathan's Famous Skinless Beef Franks": 130, "Oscar Mayer Classic Beef Uncured Franks": 130, "Oscar Mayer Bun-Lenghth Angus Beef Uncured Franks": 170, "Hebrew National 100% Kosher Beef Franks": 150, "Bar S Classic Franks": 110, "Oscar Mayer Cheese Dogs": 120};
 
-	if (htFt && htIn && age && gens.includes(gen) && activs.includes(activ)) {
+	if (htFt && htIn && wt && age && gens.includes(gen) && activs.hasOwnProperty(activ)) {
+		var fullHt = htFt * 12 + htIn;
+
+		var bmr;
+		if (gen == "Female") {
+			bmr = 655 + (4.3 * wt) + (4.7 * fullHt) - (4.7 * age);
+		} else {
+			bmr = 66 + (6.3 * wt) + (12.9 * fullHt) - (6.8 * age);
+		}
+
+		bmr = bmr * activs[activ];
+
 		var mainElem = document.getElementById("main-container");
+		var resultsContainer = document.createElement("div");
+		resultsContainer.id = "results-container";
+		resultsContainer.className = "results-container";
+		mainElem.appendChild(resultsContainer);
+
 		var outMsg = document.createElement("h3");
 		outMsg.innerHTML = "You should eat:";
 		outMsg.className = "heading-text";
-		mainElem.appendChild(outMsg);
+		resultsContainer.appendChild(outMsg);
 
-		for (var i = 0; i < 10; i++) {
-			var newguy = document.createElement("p");
-			newguy.innerHTML = "wowza";
-			newguy.className = "result";
-			mainElem.appendChild(newguy);
+		var amounts = {};
+		var dogsLen = Object.keys(dogs).length;
+		var count = 0;
+
+		for (dog in dogs) {
+			count++;
+
+			var outElem = document.createElement("p");
+			outElem.className = "result";
+			var val = Math.round(bmr / dogs[dog] * 100) / 100;
+			outElem.innerHTML = val + " " + dog;
+			resultsContainer.appendChild(outElem);
+
+			if (count < dogsLen) {
+				var orElem = document.createElement("p");
+				orElem.className = "result";
+				orElem.innerHTML = "or";
+				resultsContainer.appendChild(orElem);
+			}
 		}
+
 	} else {
 		inputError();
 	}
