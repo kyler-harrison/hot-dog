@@ -36,7 +36,7 @@ document.getElementById("calc-btn").addEventListener("click", () => {
 	var activs = {"None": 1.2, "Light": 1.375, "Moderate": 1.55, "Very": 1.725, "Olympic Athlete": 1.9};
 	var dogs = {"Ball Park Beef Dogs": 180, "Ball Park Franks": 130, "Nathan's Famous Skinless Beef Franks": 130, "Oscar Mayer Classic Beef Uncured Franks": 130, "Oscar Mayer Bun-Lenghth Angus Beef Uncured Franks": 170, "Hebrew National 100% Kosher Beef Franks": 150, "Bar S Classic Franks": 110, "Oscar Mayer Cheese Dogs": 120};
 
-	if (htFt && htIn && wt && age && gens.includes(gen) && activs.hasOwnProperty(activ)) {
+	if ((htFt != NaN) && (htIn != NaN) && wt && age && gens.includes(gen) && activs.hasOwnProperty(activ)) {
 		var fullHt = htFt * 12 + htIn;
 
 		var bmr;
