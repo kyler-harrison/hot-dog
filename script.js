@@ -66,14 +66,14 @@ document.getElementById("calc-btn").addEventListener("click", () => {
 		for (dog in dogs) {
 			count++;
 
-			var outElem = document.createElement("p");
+			var outElem = document.createElement("span");
 			outElem.className = "result";
 			var val = Math.round(bmr / dogs[dog] * 100) / 100;
 			outElem.innerHTML = val + " " + dog;
 			resultsContainer.appendChild(outElem);
 
 			if (count < dogsLen) {
-				var orElem = document.createElement("p");
+				var orElem = document.createElement("span");
 				orElem.className = "result";
 				orElem.innerHTML = "or";
 				resultsContainer.appendChild(orElem);
@@ -84,3 +84,31 @@ document.getElementById("calc-btn").addEventListener("click", () => {
 		inputError();
 	}
 });
+
+function quoteLoop() {
+	setInterval(cycleQuote, 6000);  
+}
+
+function cycleQuote() {
+	var quoteBox = document.getElementById("quote-container");
+	quoteBox.style.opacity = 1;
+	var quotes = ['"Sure, you\'ve heard of keto and you\'ve heard of fasting and all that weight-watchers stuff, but this is the first diet that actually makes sense to me."', '"I wouldn\'t be where I am now without a few dogs each day."', '"Pound that shit."', '"Hot dogs, seriously, that\'s it. They\'re the future."'];
+	var quotesPpl = ["Jeff Bezos", "Elon Musk", "Oprah Winfrey", "Bill Gates"];
+	var quotesLen = quotes.length;
+
+	var quote = document.getElementById("quote");
+	var quotePerson = document.getElementById("quote-person");
+
+	var quoteIndex = quotes.indexOf(quote.innerHTML);
+	var nextIndex = quoteIndex + 1;
+
+	if (nextIndex == quotesLen) {
+		nextIndex = 0;
+	}
+
+	quote.innerHTML = quotes[nextIndex];
+	quotePerson.innerHTML = '—' + quotesPpl[nextIndex];
+}
+
+window.onload = quoteLoop;
+
