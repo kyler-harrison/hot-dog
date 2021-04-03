@@ -22,15 +22,40 @@ body {
 }
 
 .dog-img {
-	width: 50%;
+	width: 45%;
 	height: auto;
+}
+
+.quote-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-right: 2%;
+	margin-left: 2%;
+	height: 7rem;
+	max-width: 40rem;
+}
+
+.quote {
+	font-size: 1.25rem;
+	text-align: center;
+}
+
+.quote-person {
+	margin-top: 2%;
+	font-size: 1.25rem;
 }
 
 .heading-text {
 	margin-top: 0.5rem;
 	margin-right: 0.5rem;
 	margin-left: 0.5rem;
+	width: 80%;
 	text-align: center;
+	font-size: 1.25rem;
 }
 
 .content-container {
@@ -39,6 +64,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
+	margin-bottom: 1rem;
 }
 
 .input-box {
@@ -47,10 +73,10 @@ body {
 }
 
 .btn-container {
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 	margin-bottom: 1rem;
-	width: 6rem;
-	height: 4rem;
+	width: 5rem;
+	height: 3rem;
 }
 
 .calc-btn {
@@ -60,7 +86,7 @@ body {
 	border: none;
 	border-radius: 0.5rem;
 	font-weight: bold;
-	font-size: 1.25rem;
+	font-size: 1rem;
 }
 
 .error-msg {
@@ -70,7 +96,33 @@ body {
 	margin-bottom: 1rem;
 }
 
-.result {
-	text-align: center;
+.results-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
+.result {
+	text-align: center;
+	margin-bottom: 2%;
+}
+
+@media screen and (max-width: 420px) {
+	.quote {
+		font-size: 1rem;
+	}
+
+	.quote-person {
+		font-size: 1rem;
+	}
+
+	.heading-text {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.quote-container {
+		margin-bottom: 0.25rem;
+	}
+}
