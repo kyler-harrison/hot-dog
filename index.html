@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Hot Dogs</title>
+		<title>Hot Dog Calculator</title>
 		<meta charset="UTF-8">
 		<meta name="description" content="Ever wondered how many hot dogs you should eat each day? Figure that out here.">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -9,32 +9,34 @@
 		<link rel="stylesheet" href="style.css"/>
 		<link rel="shortcut icon" type="image/x-icon" href="dog.ico"/>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-		<!-- life is a balance between hot dogs and responsibilities, make sure your hot dog consumption is responsible -->
 	</head>
 	<body>
+		<!-- You've found me, now what? Join the movement? Why not? You probably have nothing better to do, since you're inspecting elements and whatnot. -->
 		<div id="main-container" class="main-container">
 			<div class="img-container">
 				<img class="dog-img" src="hotdog.jpg"/>
 			</div>
-			<h1 class="heading-text">How many hot dogs should you eat each day?</h1>
-			<p class="heading-text">Life is a balance between hot dogs and responsibilities. Take responsibility of your daily hot dog consumption here.</p>
-			<h2 class="heading-text">Enter your information for a dog-reading.</h2>
+			<div id="quote-container" class="quote-container">
+				<span id="quote" class="quote">"Sure, you've heard of keto and you've heard of fasting and all that weight-watchers stuff, but this is the first diet that actually makes sense to me."</span>
+				<span id="quote-person" class="quote-person">—Jeff Bezos</span>
+			</div>
+			<h3 class="heading-text">How many hot dogs should you eat each day? Enter your information for a dog-reading:</h3>
 			<div class="content-container">
-				<p>Height (ft):</p>
+				<span>Height (ft):</span>
 				<input id="ht-ft" class="input-box" type="text" autocomplete="off"> 
-				<p style="margin-left: 1.5rem;">Height (in):</p>
+				<span class="entry-text" style="margin-left: 1.5rem;">Height (in):</span>
 				<input id="ht-in" class="input-box" type="text" autocomplete="off"> 
 			</div>
 			<div class="content-container">
-				<p>Weight (lbs):</p>
+				<span>Weight (lbs):</span>
 				<input id="weight" class="input-box" type="text" autocomplete="off"> 
 			</div>
 			<div class="content-container">
-				<p>Age:</p>
+				<span>Age:</span>
 				<input id="age" class="input-box" type="text" autocomplete="off"> 
 			</div>
 			<div class="content-container">
-				<p style="margin-right: 0.5rem">Gender:</p>
+				<span style="margin-right: 0.5rem">Gender:</span>
 				<select id="gender-dropdown" class="dropdown">
 					<option selected disabled hidden></option>
 					<option>Female</option>
@@ -42,7 +44,7 @@
 				</select>
 			</div>
 			<div class="content-container">
-				<p style="margin-right: 0.5rem">Activity level:</p>
+				<span style="margin-right: 0.5rem">Activity level:</span>
 				<select id="activity-dropdown" class="dropdown">
 					<option selected disabled hidden></option>
 					<option>None</option>
