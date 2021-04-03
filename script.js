@@ -32,7 +32,7 @@ document.getElementById("calc-btn").addEventListener("click", () => {
 	var wt = parseFloat(inpWt);
 	var age = parseFloat(inpAge);
 
-	var gens = ["Female", "Male"];
+	var gens = ["Dog", "Doggette", "Dog Neutral"];
 	var activs = {"None": 1.2, "Light": 1.375, "Moderate": 1.55, "Very": 1.725, "Olympic Athlete": 1.9};
 	var dogs = {"Ball Park Beef Dogs": 180, "Ball Park Franks": 130, "Nathan's Famous Skinless Beef Franks": 130, "Oscar Mayer Classic Beef Uncured Franks": 130, "Oscar Mayer Bun-Lenghth Angus Beef Uncured Franks": 170, "Hebrew National 100% Kosher Beef Franks": 150, "Bar S Classic Franks": 110, "Oscar Mayer Cheese Dogs": 120};
 
@@ -40,7 +40,7 @@ document.getElementById("calc-btn").addEventListener("click", () => {
 		var fullHt = htFt * 12 + htIn;
 
 		var bmr;
-		if (gen == "Female") {
+		if (gen == "Doggette") {
 			bmr = 655 + (4.3 * wt) + (4.7 * fullHt) - (4.7 * age);
 		} else {
 			bmr = 66 + (6.3 * wt) + (12.9 * fullHt) - (6.8 * age);
