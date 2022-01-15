@@ -80,6 +80,11 @@ document.getElementById("calc-btn").addEventListener("click", () => {
 			}
 		}
 
+		var closeMsg = document.createElement("h3");
+		closeMsg.innerHTML = "every day";
+		closeMsg.className = "heading-text";
+		resultsContainer.appendChild(closeMsg);
+
 	} else {
 		inputError();
 	}
